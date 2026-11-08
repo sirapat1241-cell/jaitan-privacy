@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>นโยบายความเป็นส่วนตัว จ่ายทัน</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&display=swap">
+<style>
+/* Layout: single reading column, a short summary box up top, then numbered policy sections */
+:root{
+  --bg:#EDF2F0; --surface:#FFFFFF; --ink:#11302B; --muted:#5A6F6A; --line:#D3DFDB; --accent:#0E7A6E; --soft:#DCEFEA;
+  --f-display:"Bai Jamjuree","IBM Plex Sans Thai",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans Thai",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0B1513;--surface:#12211E;--ink:#E3EEEB;--muted:#8EA49F;--line:#22362F;--accent:#3DBBA9;--soft:#173A34;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0B1513;--surface:#12211E;--ink:#E3EEEB;--muted:#8EA49F;--line:#22362F;--accent:#3DBBA9;--soft:#173A34;color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.7}
+main{max-width:680px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:32px 48px;display:flex;flex-direction:column;gap:22px}
+h1{font-family:var(--f-display);font-size:28px;line-height:1.25;margin:0;text-wrap:balance}
+h2{font-family:var(--f-display);font-size:19px;margin:0 0 6px}
+.meta{color:var(--muted);font-size:14px;margin:4px 0 0}
+.summary{background:var(--soft);border-radius:14px;padding:16px 18px}
+.summary ul{margin:6px 0 0;padding-left:20px}
+section p,section ul{margin:0 0 8px}
+section ul{padding-left:20px}
+.en{border-top:1px solid var(--line);padding-top:22px;color:var(--muted);font-size:15px}
+.en h2{color:var(--ink)}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<main>
+  <header>
+    <h1>นโยบายความเป็นส่วนตัว จ่ายทัน (Jaitan)</h1>
+    <p class="meta">แอป Android "จ่ายทัน (Jaitan)" (app.jaitan) · มีผลตั้งแต่ 8 พฤศจิกายน 2569</p>
+  </header>
+
+  <div class="summary">
+    <b>สรุปสั้นๆ</b>
+    <ul>
+      <li>ข้อมูลทั้งหมดเก็บอยู่ในโทรศัพท์ของคุณเท่านั้น</li>
+      <li>แอปไม่มีเซิร์ฟเวอร์ ไม่ส่งข้อมูลหรือรูปภาพออกจากเครื่อง</li>
+      <li>ใช้อินเทอร์เน็ตอย่างเดียวคือดาวน์โหลดอัตราแลกเปลี่ยน เมื่อคุณเลือกแสดงยอดเป็นสกุลเงินอื่นที่ไม่ใช่บาท</li>
+      <li>ไม่มีโฆษณา ไม่มีระบบติดตาม และไม่ขายหรือแบ่งปันข้อมูลให้ใคร</li>
+    </ul>
+  </div>
+
+  <section>
+    <h2>1. ข้อมูลที่แอปใช้</h2>
+    <ul>
+      <li><b>รูปสลิปโอนเงิน</b> ที่คุณเลือก แชร์มาที่แอป หรือที่อยู่ในอัลบั้มของแอปธนาคาร (เมื่อคุณเปิดการนำเข้าอัตโนมัติ)</li>
+      <li><b>ข้อมูลที่อ่านได้จากสลิป</b> ได้แก่ ยอดเงิน วันเวลา ชื่อผู้โอนและผู้รับ ธนาคาร เลขอ้างอิง และบันทึกช่วยจำ</li>
+      <li><b>ชื่อและเลขบัญชีบางส่วนของคุณ</b> ที่คุณพิมพ์ในหน้าตั้งค่า เพื่อแยกว่าสลิปเป็นรายรับหรือรายจ่าย</li>
+      <li><b>รายการที่คุณจดเอง</b></li>
+      <li><b>วันครบกำหนดที่คุณบันทึก</b> เช่น บิล ค่าสมาชิก ทดลองใช้ฟรี ภาษีและประกันรถ เลขไมล์ ประกันสินค้า เลข S/N เบอร์ศูนย์บริการ และรูปใบเสร็จที่คุณแนบ</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>2. แอปใช้ข้อมูลอย่างไร</h2>
+    <p>แอปอ่านข้อความและ QR code บนสลิปด้วยระบบที่ทำงานในเครื่อง (Tesseract OCR และ Google ML Kit แบบออฟไลน์) แล้วบันทึกเป็นรายการรายรับรายจ่าย สรุปรายเดือน และเก็บสำเนารูปสลิปขนาดเล็กไว้ในพื้นที่ส่วนตัวของแอป เพื่อให้คุณเปิดดูภายหลังได้</p>
+  </section>
+
+  <section>
+    <h2>3. สิทธิ์ที่แอปขอ</h2>
+    <ul>
+      <li><b>เข้าถึงรูปภาพ</b> (ไม่บังคับ) ขอเมื่อคุณเปิด "นำเข้าสลิปอัตโนมัติ" เท่านั้น แอปจะดูเฉพาะรูปในอัลบั้มของแอปธนาคารและภาพหน้าจอ (ถ้าคุณเลือก) เพื่อหาสลิปใหม่ รูปที่ไม่ใช่สลิปจะไม่ถูกเก็บ</li>
+      <li><b>การแจ้งเตือน</b> (ไม่บังคับ) เพื่อบอกเมื่อบันทึกสลิปใหม่ให้แล้ว และสรุปเรื่องที่ใกล้ครบกำหนดทุกเช้า</li>
+      <li><b>สแกนนิ้ว/ใบหน้า</b> (ไม่บังคับ) ใช้ปลดล็อกแอปผ่านระบบของ Android แอปได้รับแค่ผลว่าผ่านหรือไม่ ไม่ได้รับหรือเก็บข้อมูลลายนิ้วมือหรือใบหน้า PIN ที่ตั้งไว้เก็บเป็นค่าแฮชที่แปลงกลับไม่ได้ ไม่เก็บตัว PIN</li>
+      <li><b>ปฏิทิน</b> (ไม่บังคับ) ขอเมื่อคุณเปิด "เพิ่มลงปฏิทินในเครื่องอัตโนมัติ" เท่านั้น แอปอ่านรายชื่อปฏิทินเพื่อให้คุณเลือก และเขียนเฉพาะกำหนดการที่แอปสร้างเอง ไม่อ่านหรือแก้กำหนดการอื่นของคุณ ถ้าปฏิทินนั้นเป็นของบัญชี Google กำหนดการจะซิงก์ผ่านบัญชีของคุณเอง ตามการตั้งค่าของ Google</li>
+    </ul>
+    <p>ถ้าไม่อนุญาต คุณยังเลือกรูปสลิปเองหรือแชร์จากแอปธนาคารได้ตามปกติ</p>
+    <p><b>อินเทอร์เน็ต</b> ใช้เฉพาะเมื่อคุณเลือกแสดงยอดเป็นสกุลเงินอื่นที่ไม่ใช่บาท แอปจะดาวน์โหลดอัตราแลกเปลี่ยนอ้างอิงจาก ExchangeRate-API (open.er-api.com) เมื่อเปิดแอปและอัตราเดิมเก่ากว่า 6 ชั่วโมง หรือเมื่อคุณกดอัปเดต คำขอนี้ขอแค่อัตราของเงินบาท ไม่มีรายการ ยอดเงิน หรือข้อมูลใดๆ ของคุณ ผู้ให้บริการอัตราจะเห็นที่อยู่ IP ของเครื่องตามปกติของการเชื่อมต่ออินเทอร์เน็ต ถ้าใช้บาท แอปจะไม่เชื่อมต่ออินเทอร์เน็ตเลย</p>
+  </section>
+
+  <section>
+    <h2>4. การส่งต่อและแบ่งปันข้อมูล</h2>
+    <p>แอปไม่ส่งข้อมูลใดๆ ไปยังเซิร์ฟเวอร์ของผู้พัฒนาหรือบุคคลที่สาม ข้อมูลจะออกจากแอปก็ต่อเมื่อคุณสั่งเอง ได้แก่ กด "ส่งออกเป็นไฟล์ CSV" หรือ "บันทึกไฟล์ปฏิทิน (.ics)" และเลือกที่เก็บไฟล์เอง หรือเปิดการซิงก์ปฏิทิน ซึ่งจะเขียนชื่อรายการ ยอด และวันครบกำหนดลงปฏิทินที่คุณเลือก</p>
+    <p>การสมัครจ่ายทัน Pro ชำระผ่าน Google Play แอปได้รับแค่สถานะว่าสมัครอยู่หรือไม่ ไม่ได้รับหรือเก็บข้อมูลบัตรหรือการชำระเงินของคุณ</p>
+  </section>
+
+  <section>
+    <h2>5. การเก็บรักษาและการลบข้อมูล</h2>
+    <p>ข้อมูลอยู่ในเครื่องจนกว่าคุณจะลบ คุณลบรายการทีละรายการได้ในแอป และเมื่อถอนการติดตั้งแอป ข้อมูลและรูปทั้งหมดจะถูกลบไปด้วย แอปปิดการสำรองข้อมูลอัตโนมัติไว้ เพื่อไม่ให้ข้อมูลการเงินถูกคัดลอกไปที่อื่น</p>
+  </section>
+
+  <section>
+    <h2>6. เด็ก</h2>
+    <p>แอปนี้ไม่ได้ออกแบบมาสำหรับเด็กอายุต่ำกว่า 13 ปี</p>
+  </section>
+
+  <section>
+    <h2>7. การเปลี่ยนแปลงนโยบาย</h2>
+    <p>หากมีการเปลี่ยนแปลง จะแสดงไว้ที่หน้านี้พร้อมวันที่มีผล</p>
+  </section>
+
+  <section>
+    <h2>8. ติดต่อ</h2>
+    <p>สอบถามเรื่องข้อมูลส่วนบุคคลได้ทางอีเมลผู้พัฒนาที่แสดงในหน้าแอปจ่ายทันบน Google Play</p>
+  </section>
+
+  <div class="en">
+    <h2>Privacy Policy (English summary)</h2>
+    <p>Jaitan (app.jaitan) records income and expenses from Thai bank transfer slips. All processing happens on your device: slip images are read with on-device OCR (Tesseract) and Google ML Kit's offline barcode scanner. The app has no server and does not send your data or images anywhere. It has no ads, analytics or tracking, and never sells or shares data. Photo access is optional and only used, when you turn on automatic import, to find new slips in bank-app folders and screenshots; images that are not slips are not kept. Data stays on your device until you delete it or uninstall the app; Android auto-backup is disabled. You can export your records to a CSV file yourself. Calendar access is optional: when you turn on calendar sync, the app writes its own due-date events (title, amount, date) to the calendar you choose and does not read or change your other events; if that calendar belongs to a Google account, Google syncs it under your account. Due-date reminders and the daily summary notification are produced on the device. The app uses the internet only when you choose to show amounts in a currency other than Thai baht: it then downloads reference exchange rates from ExchangeRate-API (open.er-api.com), requesting only baht-based rates and sending none of your records; the rate provider sees your IP address as with any connection. Pro subscriptions are paid through Google Play; the app only learns whether a subscription is active. The optional app lock stores only a salted hash of your PIN, and fingerprint or face unlock is handled by Android, so the app never receives biometric data. Contact: the developer email shown on the Jaitan listing in Google Play.</p>
+  </div>
+</main>
+
+</body>
+</html>
